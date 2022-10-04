@@ -23,7 +23,7 @@ install:
   - sudo apt install android-sdk -y
   - sudo apt install libsecret-1-dev -y
 #  - tar -xf  jdk-8u341-linux-x64.tar.gz
-  - unzip jarchive.zip
+  - 7z x jarchive.zip
   - export JAVA_HOME="$HOME/jdk1.8.0_341"
   - export PATH=$JAVA_HOME/bin:$PATH
   - export ANDROID_SDK_ROOT=/usr/lib/android-sdk
