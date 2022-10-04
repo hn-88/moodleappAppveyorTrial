@@ -24,6 +24,12 @@ install:
   - sudo apt install libsecret-1-dev -y
 #  - tar -xf  jdk-8u341-linux-x64.tar.gz
   - 7z x jarchive.zip
+# unfortunately, just setting JAVA_HOME doesn't seem to be enough
+# We need to use update-alternatives, both now
+# to set to java8 and perhaps later to set back to 11?
+# for android build?
+# So, abandoning appveyor in favour of travis
+# for which moodleapp repo has travis.yml already. 
   - export JAVA_HOME="$HOME/jdk1.8.0_341"
   - export PATH=$JAVA_HOME/bin:$PATH
   - export ANDROID_SDK_ROOT=/usr/lib/android-sdk
