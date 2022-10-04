@@ -15,11 +15,14 @@ environment:
   
 install:
   - npm cache clean -f
+  - nvm install 11
   - node --version
   - npm install -g cordova
   - npm install -g cordova-res
-  - sudo apt update && sudo apt install android-sdk
-  - sudo apt install libsecret-1-dev
+  - sudo apt update 
+  - sudo apt upgrade
+  - sudo apt install android-sdk -y
+  - sudo apt install libsecret-1-dev -y
 
 build_script: 
   - npm install
