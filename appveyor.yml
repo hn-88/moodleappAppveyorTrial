@@ -18,7 +18,7 @@ install:
   - nvm install 11
   - node --version
   - npm install -g cordova
-  - npm install -g cordova-res
+  - npm install -g cordova-res@0.15.1
   - sudo apt update 
   - sudo apt upgrade
   - sudo apt install android-sdk -y
