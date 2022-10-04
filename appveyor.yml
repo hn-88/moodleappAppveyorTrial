@@ -8,7 +8,7 @@ init:
   - git config --global core.autocrlf true
 
 image:
-  - Ubuntu1604
+  - Ubuntu1804
 
 environment:
   nodejs_version: "11"
@@ -18,6 +18,7 @@ install:
   - node --version
   - npm install -g cordova
   - npm install -g cordova-res
+  - sudo apt update && sudo apt install android-sdk
   - sudo apt install libsecret-1-dev
 
 build: 
