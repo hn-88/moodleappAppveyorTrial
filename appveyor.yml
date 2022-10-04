@@ -28,9 +28,11 @@ build_script:
   - npx ionic cordova platform add android --verbose
   - cordova-res android --skip-config --copy
   - cp -Rv android platforms/android 
+  - npx cordova platform remove ios
   - npx cordova prepare
   - npx gulp
   - npm run ionic:build -- --prod
   - npx cordova build android --aot
 
-
+artifacts:
+  - path: platforms/android/app/build/outputs
