@@ -1,10 +1,10 @@
 {
-  "name": "moodlemobile",
-  "version": "3.9.5",
-  "description": "The official app for Moodle.",
+  "name": "sssvvmobile",
+  "version": "95.0.1",
+  "description": "Sri Sathya Sai Vidya Vahini official app for LMS.",
   "author": {
-    "name": "Moodle Pty Ltd.",
-    "email": "mobile@moodle.com"
+    "name": "SSSVV team",
+    "email": "support@srisathyasaividyavahini.org"
   },
   "repository": {
     "type": "git",
@@ -26,6 +26,7 @@
     "dev:android": "ionic cordova run android --livereload",
     "dev:ios": "ionic cordova run ios --livereload",
     "prod:android": "NODE_ENV=production ionic cordova run android --aot",
+    "prod:androidnorun": "NODE_ENV=production ionic cordova build android --aot --prod --release -- --packageType=apk",
     "prod:ios": "NODE_ENV=production ionic cordova run ios --aot",
     "test": "NODE_ENV=testing gulp && jest --verbose",
     "test:ci": "NODE_ENV=testing gulp && jest -ci --runInBand --verbose",
