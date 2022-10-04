@@ -31,7 +31,7 @@ build_script:
   - npx cordova platform remove ios
   - npx cordova prepare
   - npx gulp
-  - npm run ionic:build -- --prod
+#  - npm run ionic:build -- --prod
   - npx cordova build android --aot
 
 artifacts:
