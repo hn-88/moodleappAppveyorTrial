@@ -21,7 +21,7 @@ install:
   - sudo apt update && sudo apt install android-sdk
   - sudo apt install libsecret-1-dev
 
-build: 
+build_script: 
   - npm install
   - npx ionic cordova platform add android --verbose
   - npx cordova prepare
