@@ -11,11 +11,11 @@ image:
   - Ubuntu1804
 
 environment:
-  nodejs_version: "11"
+  nodejs_version: "12"
   
 install:
   - npm cache clean -f
-  - nvm install 11
+  - nvm install 12
   - node --version
   - npm install -g cordova
   - npm install -g cordova-res@0.15.1
