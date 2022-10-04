@@ -27,6 +27,6 @@ build:
   - npx cordova prepare
   - npx gulp
   - npm run ionic:build -- --prod
-  - npx cordova run android
+  - npx cordova build android --aot
 
 
