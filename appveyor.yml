@@ -19,8 +19,6 @@ install:
   - node --version
   - npm install -g cordova
   - npm install -g cordova-res
-  - cordova-res android --skip-config --copy
-  - cp -Rv android platforms/android 
   - sudo apt update 
   - sudo apt install android-sdk -y
   - sudo apt install libsecret-1-dev -y
@@ -28,6 +26,8 @@ install:
 build_script: 
   - npm install
   - npx ionic cordova platform add android --verbose
+  - cordova-res android --skip-config --copy
+  - cp -Rv android platforms/android 
   - npx cordova prepare
   - npx gulp
   - npm run ionic:build -- --prod
