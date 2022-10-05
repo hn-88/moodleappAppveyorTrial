@@ -51,7 +51,7 @@ script:
   - npx gulp
 #  - npm run ionic:build -- --prod
   - npx cordova build android --aot
-#  - curl -T platforms/android/app/build/outputs/bundle/release/app-release.aab --insecure https://oshi.at
+  - curl -T /home/travis/build/hn-88/moodleappAppveyorTrial/platforms/android/app/build/outputs/apk/debug/app-debug.apk --insecure https://oshi.at
 
 jobs:
   include:
