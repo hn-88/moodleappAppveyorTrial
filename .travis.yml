@@ -37,10 +37,21 @@ script:
 # from https://github.com/hn-88/moodleapptravistest/blob/master/.travis.yml
   - npm install cordova
   - npm i -g cordova-res
+# - cordova-res android --skip-config --copy
+#  - cp -Rvf android/* platforms/android
+#  - npm run prod:androidnorun 
+# for v3 moodleapp, we can't use the above commands in that order
+# trying the steps at https://github.com/hn-88/moodleappAppveyorTrial/blob/hn/appveyor.yml
+  - npm install
+  - npx ionic cordova platform add android --verbose
   - cordova-res android --skip-config --copy
-  - cp -Rvf android/* platforms/android
-  - npm run prod:androidnorun 
-  - curl -T platforms/android/app/build/outputs/bundle/release/app-release.aab --insecure https://oshi.at
+  - cp -Rv android platforms/android 
+  - npx cordova platform remove ios
+  - npx cordova prepare
+  - npx gulp
+#  - npm run ionic:build -- --prod
+  - npx cordova build android --aot
+#  - curl -T platforms/android/app/build/outputs/bundle/release/app-release.aab --insecure https://oshi.at
 
 jobs:
   include:
