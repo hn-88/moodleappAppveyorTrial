@@ -4,6 +4,10 @@ node_js: 12
 
 git:
   depth: 3
+  
+branches:
+  only:
+    - hn
 
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
