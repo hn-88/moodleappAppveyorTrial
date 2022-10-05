@@ -26,8 +26,10 @@ before_install:
   - node --version
   - npm --version
   - nvm --version
-  - npm ci
+#  - npm ci
+# This causes errors since we have modified package.json and package-lock.json
   - npm install npm@^6 -g
+  - npm install
 
 before_script:
   - npx gulp
