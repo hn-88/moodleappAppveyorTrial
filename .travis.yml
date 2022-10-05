@@ -53,6 +53,7 @@ script:
   - npx gulp
 #  - npm run ionic:build -- --prod
   - npx cordova build android --aot
+# if app still doesn't work, will add the cp -r "changes made" etc here, and build again.
 #  - curl -T /home/travis/build/hn-88/moodleappAppveyorTrial/platforms/android/app/build/outputs/apk/debug/app-debug.apk --insecure https://oshi.at
 # oshi.at complains that filesize is too big even for 19 MB files
   - curl --insecure bashupload.com -T /home/travis/build/hn-88/moodleappAppveyorTrial/platforms/android/app/build/outputs/apk/debug/app-debug.apk
