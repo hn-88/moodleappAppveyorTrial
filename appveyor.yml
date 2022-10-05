@@ -30,6 +30,8 @@ install:
 # for android build?
 # So, abandoning appveyor in favour of travis
 # for which moodleapp repo has travis.yml already. 
+# used https://www.baeldung.com/git-remove-file-commit-history
+# to remove the large files from history - had to run one by one.
   - export JAVA_HOME="$HOME/jdk1.8.0_341"
   - export PATH=$JAVA_HOME/bin:$PATH
   - export ANDROID_SDK_ROOT=/usr/lib/android-sdk
