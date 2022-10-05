@@ -53,8 +53,8 @@ script:
   - npx gulp
 # the following was found from package.json scripts section
 # and is necessary before the cordova build
-  - npm build:prod
-  - npm prod:androidnorun
+  - npm run build:prod
+  - npm run prod:androidnorun
   - zip outputs.zip -r /home/travis/build/hn-88/moodleappAppveyorTrial/platforms/android/app/build/outputs
 #  - npx cordova build android --aot
 # if app still doesn't work, will add the cp -r "changes made" etc here, and build again.
