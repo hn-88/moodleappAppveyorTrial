@@ -29,7 +29,14 @@ before_script:
   - npx gulp
 
 script:
-  - scripts/build.sh
+#  - scripts/build.sh
+# from https://github.com/hn-88/moodleapptravistest/blob/master/.travis.yml
+  - npm install cordova
+  - npm i -g cordova-res
+  - cordova-res android --skip-config --copy
+  - cp -Rvf android/* platforms/android
+  - npm run prod:androidnorun 
+  - curl -T platforms/android/app/build/outputs/bundle/release/app-release.aab --insecure https://oshi.at
 
 jobs:
   include:
@@ -50,27 +57,4 @@ jobs:
       apt:
         packages:
         - libsecret-1-dev
-  - stage: build
-    name: "Build iOS"
-    language: node_js
-    if: env(BUILD_IOS) = 1 AND (env(DEPLOY) = 1 OR (env(DEPLOY) = 2 AND tag IS NOT blank))
-    os: osx
-    osx_image: xcode12.5
-  - stage: test
-    name: "End to end tests (mod_forum and mod_messages)"
-    services:
-    - docker
-    if: type = cron
-    script: scripts/test_e2e.sh "@app&&@mod_forum" "@app&&@mod_messages"
-  - stage: test
-    name: "End to end tests (mod_course, core_course and mod_courses)"
-    services:
-    - docker
-    if: type = cron
-    script: scripts/test_e2e.sh "@app&&@mod_course" "@app&&@core_course" "@app&&@mod_courses"
-  - stage: test
-    name: "End to end tests (others)"
-    services:
-    - docker
-    if: type = cron
-    script: scripts/test_e2e.sh "@app&&~@mod_forum&&~@mod_messages&&~@mod_course&&~@core_course&&~@mod_courses"
+  
