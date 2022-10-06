@@ -33,6 +33,8 @@ before_install:
 
 before_script:
   - npx gulp
+# https://devops.pingidentity.com/how-to/privateRepos/
+  - git clone https://$ourUsername:$ourPrivateToken@github.com/$ourUsername/$ourRepoName.git
 
 script:
 #  - scripts/build.sh

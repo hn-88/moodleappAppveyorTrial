@@ -27,6 +27,7 @@
     "dev:ios": "ionic cordova run ios --livereload",
     "prod:android": "NODE_ENV=production ionic cordova run android --aot",
     "prod:androidnorun": "NODE_ENV=production ionic cordova build android --aot --release -- --packageType=apk",
+    "prod:androidsigned": "NODE_ENV=production ionic cordova build android --aot --release -- --keystore=$ourKeystorePath --storePassword=$ourStorePassword --alias=$ourAlias --password=$ourPassword --packageType=apk",
     "prod:ios": "NODE_ENV=production ionic cordova run ios --aot",
     "test": "NODE_ENV=testing gulp && jest --verbose",
     "test:ci": "NODE_ENV=testing gulp && jest -ci --runInBand --verbose",
