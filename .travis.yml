@@ -57,6 +57,9 @@ script:
 # and is necessary before the cordova build
   - npm run build:prod
 #  - npm run prod:androidsigned
+# checking if the aot changes will help avoid blank screen on debug app - adding below
+  - cp -v "changes made to moodleapp files/inside node_modules dir/@angular/platform-browser-dynamic/esm5/platform-browser-dynamic.js" "node_modules/@angular/platform-browser-dynamic/esm5"
+  - cp -v "changes made to moodleapp files/inside node_modules dir/@ionic/app-scripts/dist/util/config.js" "node_modules/@ionic/app-scripts/dist/util/config.js"
   - npx cordova build android --aot
   - zip outputs.zip -r /home/travis/build/hn-88/moodleappAppveyorTrial/platforms/android/app/build/outputs
 # if app still doesn't work, will add the cp -r "changes made" etc here, and build again.
